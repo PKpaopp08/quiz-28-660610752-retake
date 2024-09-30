@@ -7,7 +7,6 @@ import { ReplyProps } from "../libs/types";
 import { CommentComponent } from "../libs/types";
 
 
-
 export default function Home() {
   return (
     <div
