@@ -4,8 +4,16 @@ import { comments } from "../libs/comments";
 import PostOwnner from "../components/PostOwnner";
 import Comment from "../components/Comment";
 import { ReplyProps } from "../libs/types";
-import { CommentComponent } from "../libs/types";
 
+
+
+interface CommentComponent {
+  userImagePath: string;
+  username: string;
+  commentText: string;
+  likeNum: number;
+  replies: ReplyProps[];
+}
 
 export default function Home() {
   return (
@@ -29,10 +37,10 @@ export default function Home() {
         {comments.map((com: CommentComponent) => (
           <Comment
             key={com.username}
-            ImagePath={com.ImagePath}
+            ImagePath={com.userImagePath}
             username={com.username}
-            commentTitle={com.commentTitle}
-            likes={com.likes}
+            commentTitle={com.commentText}
+            likes={com.likeNum}
             replies={com.replies}
           />
         ))}
