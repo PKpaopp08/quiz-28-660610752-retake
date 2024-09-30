@@ -1,21 +1,15 @@
 "use client";
 import Reply from "./Reply";
 import { ReplyProps } from "../libs/types";
+import { CommentComponent } from "../libs/types";
 
-interface CommentComponent {
-  userImagePath: string;
-  username: string;
-  commentText: string;
-  likeNum: number;
-  replies: ReplyProps[];
-}
 export default function Comment({
   ImagePath,
   username,
   commentTitle,
   likes,
   replies,
-}) {
+}:CommentComponent) {
   return (
     <div>
       <div className="d-flex gap-2 my-2">
